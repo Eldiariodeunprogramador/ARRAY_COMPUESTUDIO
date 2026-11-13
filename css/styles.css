@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    display: grid;
+    place-items: center;
+    color: #e2e8f0;
+    background: #0b1120;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+    width: min(100%, 720px);
+    padding: clamp(28px, 6vw, 48px);
+    background: #111b2e;
+    border: 1px solid #26344b;
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgb(0 0 0 / 28%);
+}
+
+h1 {
+    margin: 0 0 12px;
+    color: #f8fafc;
+    font-size: clamp(2rem, 6vw, 2.7rem);
+    line-height: 1.15;
+}
+
+h2 {
+    margin: 32px 0 14px;
+    color: #f8fafc;
+    font-size: 1.2rem;
+}
+
+p {
+    margin: 0 0 28px;
+    color: #a7b5ca;
+    font-size: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #a7b5ca;
+    font-size: 0.9rem;
+}
+
+.formulario {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px 14px;
+    color: #e2e8f0;
+    background: #0b1120;
+    border: 1px solid #35445c;
+    border-radius: 10px;
+    font: inherit;
+}
+
+input:focus-visible {
+    border-color: #22d3ee;
+    outline: 3px solid rgb(34 211 238 / 25%);
+}
+
+button {
+    padding: 12px 18px;
+    color: #06202a;
+    background: #22d3ee;
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 160ms ease;
+}
+
+button:hover {
+    background: #67e8f9;
+}
+
+button:focus-visible {
+    outline: 3px solid #a5f3fc;
+    outline-offset: 3px;
+}
+
+ol {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: ejercicios;
+}
+
+li {
+    counter-increment: ejercicios;
+}
+
+ul#lista {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul#lista li {
+    padding: 11px 14px;
+    color: #e2e8f0;
+    background: #17243a;
+    border: 1px solid #2b3b55;
+    border-radius: 10px;
+}
+
+#cantidad {
+    margin: 14px 0 0;
+    color: #67e8f9;
+    font-weight: 600;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 62px;
+    padding: 14px 16px;
+    color: #e2e8f0;
+    background: #17243a;
+    border: 1px solid #2b3b55;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+a::before {
+    content: counter(ejercicios, decimal-leading-zero);
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    color: #67e8f9;
+    background: #123849;
+    border-radius: 9px;
+    font-size: 0.75rem;
+}
+
+a:hover {
+    background: #1c2d47;
+    border-color: #22d3ee;
+}
+
+a:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    a,
+    button {
+        transition: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario {
+        flex-direction: column;
+    }
+}

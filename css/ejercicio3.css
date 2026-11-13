@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: min(100% - 40px, 1120px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 32px 0;
+    color: #e2e8f0;
+    background: #0b1120;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.boton-volver {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 10px 16px;
+    color: #e2e8f0;
+    background: #17243a;
+    border: 1px solid #35445c;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.boton-volver:hover {
+    background: #1c2d47;
+    border-color: #22d3ee;
+}
+
+header {
+    margin-bottom: 28px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    color: #f8fafc;
+    font-size: clamp(2rem, 6vw, 2.7rem);
+    line-height: 1.15;
+}
+
+header p,
+footer p {
+    margin: 0;
+    color: #a7b5ca;
+}
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.tarjeta,
+.contenedor {
+    background: #111b2e;
+    border: 1px solid #26344b;
+    border-radius: 16px;
+}
+
+.tarjeta {
+    padding: 20px;
+}
+
+.tarjeta h3 {
+    margin: 0 0 12px;
+    color: #a7b5ca;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tarjeta p {
+    margin: 0;
+    color: #67e8f9;
+    font-size: 1.5rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.contenedor {
+    margin-bottom: 24px;
+    padding: clamp(20px, 4vw, 28px);
+}
+
+.contenedor h2 {
+    margin: 0 0 20px;
+    color: #f8fafc;
+    font-size: 1.25rem;
+}
+
+#formularioProducto {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    color: #a7b5ca;
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    color: #e2e8f0;
+    background: #0b1120;
+    border: 1px solid #35445c;
+    border-radius: 10px;
+    font: inherit;
+}
+
+input::placeholder {
+    color: #74839b;
+}
+
+input:focus-visible,
+select:focus-visible {
+    border-color: #22d3ee;
+    outline: 3px solid rgb(34 211 238 / 25%);
+}
+
+button {
+    justify-self: start;
+    align-self: end;
+    min-height: 46px;
+    padding: 10px 18px;
+    color: #06202a;
+    background: #22d3ee;
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 160ms ease;
+}
+
+button:hover {
+    background: #67e8f9;
+}
+
+button:focus-visible,
+.boton-volver:focus-visible {
+    outline: 3px solid #a5f3fc;
+    outline-offset: 3px;
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: auto minmax(180px, 1fr) auto minmax(180px, 1fr);
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+#mensaje {
+    color: #67e8f9;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    border: 1px solid #26344b;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111b2e;
+    white-space: nowrap;
+}
+
+th,
+td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #2b3b55;
+    text-align: left;
+}
+
+th {
+    color: #67e8f9;
+    background: #17243a;
+    font-size: 0.9rem;
+}
+
+td {
+    color: #e2e8f0;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+footer {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+    #formularioProducto {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    button,
+    .boton-volver {
+        transition: none;
+    }
+}
